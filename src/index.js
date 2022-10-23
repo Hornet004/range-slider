@@ -5,17 +5,6 @@ function get_theme() {
     .range_class{
         width: 100%;
     }
-    .date_class{
-        padding: 12px;
-        width: 48%;
-        background-color: #eaecff;
-        height: 4vh;
-        border-radius: 4px;
-        border: none;
-    }
-    .date_class:hover{
-        background-color: #65abfd;  
-    }
     `
 }
 
