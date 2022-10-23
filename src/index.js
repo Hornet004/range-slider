@@ -23,18 +23,18 @@ function rangeSlider() {
     const el = document.createElement('div')
     const shadow = el.attachShadow({mode: 'closed'})
 
+    // Initialize the style  and get the style theme
     const style = document.createElement('style')
     style.textContent = get_theme()
 
+    // Input component is created beneath this line
     const input = document.createElement('input')
     input.classList =('range_class')
     input.type = 'range' 
 
-    const picker = document.createElement('input')
-    picker.classList =('date_class')
-    picker.type = 'date'
+   
 
-    shadow.append(input, style, picker)
+    shadow.append(input, style)
 
     return el
 }
