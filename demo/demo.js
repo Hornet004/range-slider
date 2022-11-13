@@ -1,19 +1,21 @@
 const rangeSlider = require('..')
 
-const range = rangeSlider()
-document.body.innerHTML = `<h1>Range Slider</h1>`
+const range = rangeSlider({min:0, max: 10})
+
+document.body.innerHTML = (`<h1>Range Slider</h1>`)
 
 const main = document.createElement('div')
-main.classList.add('demo')
+main.classList.add('main')
+main.append(range)
 
 const style = document.createElement('style')
 style.textContent = `
-.demo{
-    border: 2px solid red;
-    padding: 20px;
+.main{
+    // border: 2px solid red;
+    padding: 24px;
 }
 
+
 `
-main.append(range)
-  
+
 document.body.append(main, style)
