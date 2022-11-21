@@ -53,7 +53,7 @@ function rangeSlider(opts, protocol) {
     function handle_input(e) {
       const val = Number(e.target.value)
       fill.style.width = `${(val/max)*100}%`
-      console.log(val)
+      // console.log(val)
       notify({from: name,type: 'update', data: val})
     }
 
