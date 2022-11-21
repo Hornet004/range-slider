@@ -1,6 +1,6 @@
 {
   "name": "range-slider-david_ui",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Range UI component",
   "main": "src/index.js",
   "scripts": {
