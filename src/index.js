@@ -1,7 +1,20 @@
 module.exports = rangeSlider
 
-function rangeSlider(opts) {
+var id = 0
+function rangeSlider(opts, protocol) {
   const {min = 0, max = 1000} = opts
+
+    const name = `range-slider-${id++}`  
+    const notify = protocol({from: name}, listen)
+
+    function listen(message){
+      const {type, data} = message
+      if (type === 'update') {
+        slider.value = data
+
+        fill.style.width = `${(data/max)*100}%`
+      }
+    }
 
     const el = document.createElement('div')
     const shadow = el.attachShadow({mode: 'closed'})
@@ -27,8 +40,6 @@ function rangeSlider(opts) {
     fill.classList.add('fill')
 
 
-
-
     //stylesheet
     const style = document.createElement('style')
     style.textContent = get_theme()
@@ -42,6 +53,8 @@ function rangeSlider(opts) {
     function handle_input(e) {
       const val = Number(e.target.value)
       fill.style.width = `${(val/max)*100}%`
+      console.log(val)
+      notify({from: name,type: 'update', data: val})
     }
 
 
